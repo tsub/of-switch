@@ -10,3 +10,8 @@
 package 'openvswitch-switch' do
   action :install
 end
+
+service 'openvswitch-switch' do
+  action [:start, :enable]
+  supports start: true, status: true, restart: true, reload: true
+end
