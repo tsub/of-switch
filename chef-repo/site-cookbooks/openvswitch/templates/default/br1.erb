@@ -1,0 +1,11 @@
+allow-ovs br1
+iface br1 inet static
+  ovs_type OVSBridge
+	ovs_ports eth1
+	address 192.168.121.49
+	netmask 255.255.255.0
+
+allow-br1 eth2
+iface eth2 inet manual
+  ovs_bridge br1
+	ovs_type OVSPort
